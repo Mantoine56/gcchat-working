@@ -32,6 +32,7 @@ yarn-error.log*
 
 # env files (can opt-in for committing if needed)
 .env*
+!.env.example
 
 # vercel
 .vercel
@@ -50,7 +51,15 @@ pses.csv
 
 # large files
 *.csv
+# Don't ignore important config JSON files
 *.json
+!package.json
+!package-lock.json
+!tsconfig.json
+!next-env.d.ts
+!tailwind.config.json
+!postcss.config.json
+!eslint.config.json
 *.sqlite
 *.db
 *.zip
