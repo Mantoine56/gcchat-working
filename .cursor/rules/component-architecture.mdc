@@ -19,4 +19,12 @@ The application follows a component-based architecture using React.
 - [LightboxChatInterface.tsx](mdc:components/LightboxChatInterface.tsx): Popup/modal chat interface
 
 ## Data Selection
-- [DatasetSelector.tsx](mdc:components/DatasetSelector.tsx): UI to switch between different datasets (Travel Q data vs PSES)
+- [DemoDatasetSelector.tsx](mdc:components/DemoDatasetSelector.tsx): UI to switch between different datasets
+
+## Component Security Considerations
+- All user inputs must be properly validated and sanitized
+- Avoid using `dangerouslySetInnerHTML` without proper sanitization
+- Never store sensitive information in component state
+- Implement proper error boundaries for component error handling
+- Remove all debug console logs in production components
+- Use React's built-in XSS protections and avoid direct DOM manipulation

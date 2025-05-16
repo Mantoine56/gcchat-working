@@ -3,7 +3,8 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'myGC assistant',
-  description: 'AI chat interface following the Government of Canada Design System',
+  description: 'Government of Canada AI assistant providing help with government services and information',
+  keywords: 'Canada, government, assistant, services, information, help',
 }
 
 export default function RootLayout({
@@ -19,7 +20,14 @@ export default function RootLayout({
           rel="stylesheet"
         />
       </head>
-      <body className="bg-white font-gc">{children}</body>
+      <body className="bg-white font-gc">
+        <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:p-4 focus:z-50 focus:bg-white focus:text-gc-blue">
+          Skip to main content
+        </a>
+        <main id="main-content">
+          {children}
+        </main>
+      </body>
     </html>
   )
 }

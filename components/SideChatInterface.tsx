@@ -91,10 +91,12 @@ export const SideChatInterface = () => {
           isOpen ? 'translate-x-0' : 'translate-x-full'
         } flex flex-col`}
         aria-hidden={!isOpen}
+        role="dialog"
+        aria-labelledby="side-chat-title"
       >
         {/* Chat header */}
         <div className="bg-gc-blue text-white p-4 flex justify-between items-center shadow-md">
-          <h2 className="text-lg font-bold">myGC assistant</h2>
+          <h2 id="side-chat-title" className="text-lg font-bold">myGC assistant</h2>
           <button
             onClick={toggleChat}
             className="text-white hover:text-gc-gray transition-colors"
@@ -108,6 +110,9 @@ export const SideChatInterface = () => {
 
         {/* Chat messages */}
         <div className="flex-1 overflow-y-auto p-4 bg-[#f8f8f8]">
+          <div aria-live="polite" className="sr-only">
+            {isLoading ? "Assistant is thinking..." : ""}
+          </div>
           <div className="space-y-4">
             {messages.map((message, index) => (
               <ChatMessage
@@ -148,6 +153,7 @@ export const SideChatInterface = () => {
         }`}
         onClick={toggleChat}
         aria-hidden="true"
+        role="dialog"
       />
     </>
   );

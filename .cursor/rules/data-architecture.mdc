@@ -24,6 +24,15 @@ The application uses a structured approach to data storage and retrieval for RAG
 4. The context is combined with the user query to generate a response
 
 ## Key Files
-- [Travel Q Data.csv](mdc:Travel Q Data.csv): Travel dataset
-- [pses.csv](mdc:pses.csv): PSES dataset
-- [web_scraper.py](mdc:web_scraper.py): Web scraping script
+- Travel Q Data.csv: Travel dataset (not committed to repo due to size)
+- pses.csv: PSES dataset (not committed to repo due to size)
+- web_scraper.py: Web scraping script
+
+## Data Security Considerations
+- Large data files are excluded from Git via .gitignore
+- Sensitive data must be filtered before sending to client
+- PII/PHI must be properly anonymized in all datasets
+- Implement access controls for different data sources
+- Do not expose raw data through APIs
+- Validate and sanitize all user queries before processing
+- Review [security_improvements.md](mdc:docs/security_improvements.md) for comprehensive security recommendations

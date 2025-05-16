@@ -57,6 +57,10 @@ export const ChatInput = ({ onSendMessage, isDisabled }: ChatInputProps) => {
 
   return (
     <div className="w-full">
+      <label htmlFor="chat-input" className="sr-only">Type your message</label>
+      <div aria-live="polite" className="sr-only">
+        {isGenerating || Boolean(isDisabled) ? "Assistant is processing your request..." : ""}
+      </div>
       <PureMultimodalInput
         chatId="main-chat"
         messages={messages}
@@ -68,6 +72,7 @@ export const ChatInput = ({ onSendMessage, isDisabled }: ChatInputProps) => {
         canSend={!isDisabled}
         selectedVisibilityType="private"
         className="px-0.5"
+        inputId="chat-input"
       />
     </div>
   );

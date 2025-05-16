@@ -49,6 +49,7 @@ export const InlineChatInterface = () => {
           viewBox="0 0 24 24" 
           stroke="currentColor" 
           className="w-6 h-6 mr-2"
+          aria-hidden="true"
         >
           <path 
             strokeLinecap="round" 
@@ -57,11 +58,14 @@ export const InlineChatInterface = () => {
             d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" 
           />
         </svg>
-        <h2 className="text-lg font-bold">myGC assistant</h2>
+        <h2 id="inline-chat-title" className="text-lg font-bold">myGC assistant</h2>
       </div>
 
       {/* Chat messages */}
-      <div className="h-96 overflow-y-auto p-4 bg-[#f8f8f8]">
+      <div className="h-96 overflow-y-auto p-4 bg-[#f8f8f8]" role="log" aria-label="Chat conversation">
+        <div aria-live="polite" className="sr-only">
+          {isLoading ? "Assistant is thinking..." : ""}
+        </div>
         <div className="space-y-4">
           {messages.map((message, index) => (
             <ChatMessage

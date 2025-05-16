@@ -18,6 +18,14 @@ This is a Government of Canada AI Assistant project built with Next.js and TypeS
 
 ## Key Configuration Files
 - Next.js config: [next.config.ts](mdc:next.config.ts)
-- Package dependencies: [package.json](mdc:package.json)
+- Package dependencies: [package.json](mdc:package.json) (dependencies locked to specific versions)
 - TypeScript config: [tsconfig.json](mdc:tsconfig.json)
-- Environment variables: `.env.local` (not committed to version control)
+- Environment variables: `.env.example` (template) and `.env.local` (local values, not committed)
+
+## Security Architecture
+- Environment variables are not committed to version control
+- Dependency versions are locked for security in package.json
+- Large data files are excluded via .gitignore
+- [Security Improvements](mdc:docs/security_improvements.md): Comprehensive security recommendations
+- User input validation and sanitization required for all inputs
+- Client-side state should never contain sensitive information

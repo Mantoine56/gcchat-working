@@ -329,6 +329,10 @@ interface MultimodalInputProps {
   isGenerating: boolean;
   canSend: boolean;
   className?: string;
+  inputId?: string;
+  chatId?: string;
+  messages?: {id: string; content: string; role: string}[];
+  selectedVisibilityType?: string;
 }
 
 function PureMultimodalInput({
@@ -339,6 +343,10 @@ function PureMultimodalInput({
   isGenerating,
   canSend,
   className,
+  inputId,
+  chatId,
+  messages,
+  selectedVisibilityType,
 }: MultimodalInputProps) {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const [input, setInput] = useState('');
@@ -501,6 +509,7 @@ function PureMultimodalInput({
 
         {/* Textarea for input */}
         <Textarea
+          id={inputId}
           ref={inputRef}
           value={input}
           onChange={handleInput}

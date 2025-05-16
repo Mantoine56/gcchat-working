@@ -151,6 +151,9 @@ export const LightboxChatInterface = () => {
 
             {/* Chat messages */}
             <div className="flex-1 overflow-y-auto p-4 bg-[#f8f8f8]">
+              <div aria-live="polite" className="sr-only">
+                {isLoading ? "Assistant is thinking..." : ""}
+              </div>
               <div className="space-y-4">
                 {messages.map((message, index) => (
                   <ChatMessage
