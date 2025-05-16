@@ -1,0 +1,24 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Services Architecture
+
+The application uses a services layer to handle AI integration and data processing.
+
+## Core Services
+- [ai.ts](mdc:services/ai.ts): Basic AI chat completion service
+- [langchain.ts](mdc:services/langchain.ts): LangChain integration for RAG capabilities
+- [rag.ts](mdc:services/rag.ts): Retrieval Augmented Generation functionality
+- [custom-vector-store.ts](mdc:services/custom-vector-store.ts): Custom vector store implementation for embeddings
+- [similarity.ts](mdc:services/similarity.ts): Vector similarity calculations
+- [dataset-query.ts](mdc:services/dataset-query.ts): Dataset query functionality
+
+## Data Flow
+1. User sends a message through ChatInterface
+2. Message is sent to API endpoints via ai.ts
+3. API routes process the request and use langchain.ts/rag.ts
+4. Vector stores are queried using custom-vector-store.ts
+5. Context is retrieved and enhanced with LLM responses
+6. Response is streamed back to the UI

@@ -1,0 +1,23 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Project Overview
+
+This is a Government of Canada AI Assistant project built with Next.js and TypeScript. It provides a conversational AI interface with Retrieval Augmented Generation (RAG) capabilities.
+
+## Main Entry Points
+- The main application entry is [app/page.tsx](mdc:app/page.tsx)
+- The dashboard page is at [app/dashboard/page.tsx](mdc:app/dashboard/page.tsx)
+- The chat demo page is at [app/chat-demo/page.tsx](mdc:app/chat-demo/page.tsx)
+
+## Core API Routes
+- Streaming chat API: [app/api/chat/streaming/route.ts](mdc:app/api/chat/streaming/route.ts)
+- RAG API: [app/api/rag/route.ts](mdc:app/api/rag/route.ts)
+
+## Key Configuration Files
+- Next.js config: [next.config.ts](mdc:next.config.ts)
+- Package dependencies: [package.json](mdc:package.json)
+- TypeScript config: [tsconfig.json](mdc:tsconfig.json)
+- Environment variables: `.env.local` (not committed to version control)

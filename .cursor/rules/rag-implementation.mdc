@@ -1,0 +1,32 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# RAG Implementation
+
+This document explains the Retrieval Augmented Generation (RAG) implementation in the project.
+
+## Core Components
+- [services/langchain.ts](mdc:services/langchain.ts): LangChain integration
+- [services/rag.ts](mdc:services/rag.ts): Retrieval Augmented Generation functionality
+- [services/custom-vector-store.ts](mdc:services/custom-vector-store.ts): Custom vector store
+- [app/api/chat/streaming/route.ts](mdc:app/api/chat/streaming/route.ts): Streaming API endpoint
+
+## Workflow
+1. User question is sent to the API endpoint
+2. Relevant documents are retrieved from vector store
+3. Retrieved context is combined with the question
+4. LLM generates a response based on the question and context
+5. Response is streamed back to the user interface
+
+## Key Features
+- Support for multiple datasets (Travel and PSES)
+- Vector search using FAISS/custom implementations
+- Streaming responses for faster user experience
+- Context enhancement with relevant information
+
+## Future Improvements
+- Further dataset integration
+- Improved vector search
+- Better prompt engineering

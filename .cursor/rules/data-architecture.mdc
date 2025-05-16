@@ -1,0 +1,29 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Data Architecture
+
+The application uses a structured approach to data storage and retrieval for RAG capabilities.
+
+## Data Sources
+- Travel dataset: Information about government travel records
+- PSES dataset: Public Service Employee Survey data
+
+## Data Storage
+- [data/chroma_db/](mdc:data/chroma_db): ChromaDB vector database
+- [data/processed/](mdc:data/processed): Processed data files
+- [data/raw/](mdc:data/raw): Raw data files
+- [data/pses/faiss_index/](mdc:data/pses/faiss_index): FAISS vector indexes for PSES data
+
+## Data Flow
+1. Raw data is processed and converted to embeddings
+2. Embeddings are stored in vector databases (FAISS/ChromaDB)
+3. When a user asks a question, relevant context is retrieved
+4. The context is combined with the user query to generate a response
+
+## Key Files
+- [Travel Q Data.csv](mdc:Travel Q Data.csv): Travel dataset
+- [pses.csv](mdc:pses.csv): PSES dataset
+- [web_scraper.py](mdc:web_scraper.py): Web scraping script

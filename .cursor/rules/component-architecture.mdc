@@ -1,0 +1,22 @@
+---
+description: 
+globs: 
+alwaysApply: true
+---
+# Component Architecture
+
+The application follows a component-based architecture using React.
+
+## Main Chat Components
+- [ChatInterface.tsx](mdc:components/ChatInterface.tsx): Main chat interface with message handling and UI
+- [ChatMessage.tsx](mdc:components/ChatMessage.tsx): Individual message display component
+- [ChatInput.tsx](mdc:components/ChatInput.tsx): User input component for entering messages
+- [ChatSidebar.tsx](mdc:components/ChatSidebar.tsx): Sidebar for conversation history and navigation
+
+## Chat UI Variations
+- [SideChatInterface.tsx](mdc:components/SideChatInterface.tsx): Chat interface positioned on the side
+- [InlineChatInterface.tsx](mdc:components/InlineChatInterface.tsx): Inline chat interface embedded in pages
+- [LightboxChatInterface.tsx](mdc:components/LightboxChatInterface.tsx): Popup/modal chat interface
+
+## Data Selection
+- [DatasetSelector.tsx](mdc:components/DatasetSelector.tsx): UI to switch between different datasets (Travel Q data vs PSES)
